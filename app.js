@@ -142,14 +142,17 @@ function save(){
 	deleteElementById("downloadHref")
 }
 function viewImg(){
-	var x0 = confirm("Delete Work And Show Image?")
-	if (x0 == true){
 	var canvas = document.getElementById("draw");
-    var img = canvas.toDataURL("image/png");
-	echo('<img src="'+img+'">');
-	}else{
-		alert("Image Display Cancelled.");
-	}
+    var canvas = document.getElementById("draw");
+    var img    = canvas.toDataURL("image/png");
+	var btn = document.createElement("a");
+	btn.href = img;         
+	btn.target = "_blank";
+	btn.id = "downloadHref"
+	document.body.appendChild(btn); 
+	var x0sp = document.getElementById("downloadHref")
+	x0sp.click()
+	deleteElementById("downloadHref")
 }
 function showhex(){
 	xs.toggleShow('#hex')
